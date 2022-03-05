@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="anh.png">
+    <title>8_3_card</title>
+
+    <style>
+
+        :root{
+            --heightScreen: -950px;
+        }
+
+        html{
+            scroll-behavior: smooth;
+            background-color: black;
+        }
+
+        .body{
+            position: fixed;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            gap: 20px;
+            inset: 0 0 0 0;
+        }
+        .body div{
+            height: 100%;
+        }
+        
+        .body div img{
+            display: block;
+            width: 90%;
+            margin: 88px auto;
+            padding:0 10px;
+            border-radius: 30px;
+            animation: dropImg linear; 
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes dropImg{
+            0% {transform: translateY(0);}
+            50% {transform: translateY(var(--heightScreen) );}
+            100% {transform: translateY(0);}
+        }
+        
+        .boxAlter{
+            position: fixed;
+            inset: 0 0 0 0;
+            z-index: 900;
+            background-color: rgba(0,0,0,0.1);
+            animation: displayBox .5s linear;
+            display: none;
+        }
+
+        .boxAlter_infor{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 60%;
+            border-radius: 10px;
+            transform: translate(-50%, -50%);
+            background-color: aqua;
+        }
+
+        
+        @keyframes displayBox{
+            from{
+                transform: translateX(1000px);
+                transform: scale(0);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+
+        
+        
+    /* Screen old PC */
+    @media (max-width : 1367px)
+    {
+        :root{
+            --heightScreen: -2690px;
+        }
+        
+        .body{
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+        }
+        
+        .body div img{
+            margin: 20px auto;
+        }
+    }
+
+    @media (max-width : 1367px) and (max-height: 768px)
+    {
+        :root{
+                --heightScreen: -4050px;
+
+            }
+    
+            .body{
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+        }
+    
+        .body div img{
+            margin: 20px auto;
+        }
+    }
+
+
+/* Screen Tablet */
+@media (min-width: 740px) and (max-width : 1023px){
+    :root{
+            --heightScreen: -1800px;
+        }
+
+    .body{
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+
+    .body div img{
+        margin: 20px auto;
+    }
+}
+
+
+
+/* Screen Mobile */
+@media (max-width: 739px){
+    :root{
+            --heightScreen: -2590px;
+        }
+
+    .body{
+        grid-template-columns: auto auto;
+        gap: 10px;
+    }
+
+    .body div img{
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 375px){
+    :root{
+            --heightScreen: -2200px;
+        }
+
+    .body{
+        grid-template-columns: auto auto;
+        gap: 10px;
+    }
+
+    .body div img{
+        margin: 20px auto;
+    }
+}
+
+
+    </style>
+</head>
+<body onload="setTimeout(myFunction, 9500)">
+    <div class="boxAlter" id="IdBoxAlter">
+            <img class="boxAlter_infor" src="./CardImage.png" alt="">
+    </div>
+
+    <div class="body">
+        <div>
+            <img src="KieuThao.jpg" alt="">
+            <img src="DoThao.jpg" alt="">
+            <img src="Dung.jpg" alt="">
+            <img src="Hoa.jpg" alt="">
+        </div>
+        <div>
+            <img src="Hoai.jpg" alt="">
+            <img src="KieuHoa.jpg" alt="">
+            <img src="Lan.jpg" alt="">
+            <img src="LanAnh.jpg" alt="">
+        </div>
+        <div>
+            <img src="NguyenThiPhuongThao.jpg" alt="">
+            <img src="Nguyet.jpg" alt="">
+            <img src="Nhan.jpg" alt="">
+            <img src="Nhi.png" alt="">
+        </div>
+        <div>
+            <img src="PhiThao.jpg" alt="">
+            <img src="PhungThao.png" alt="">
+            <img src="ThanhThao.jpg" alt="">
+            <img src="Thuyet.jpg" alt="">
+        </div>
+        <div>
+            <img src="Trang.jpg" alt="">
+            <img src="Trinh.jpg" alt="">
+            <img src="Tuyen.jpg" alt="">
+            <img src="Vien.jpg" alt="">
+        </div>
+        <div>
+            <img src="VuongHai.jpg" alt="">
+            <img src="Phuong.jpg" alt="">
+            <img src="Van.jpg" alt="">
+            <img src="NgocAnh.jpg" alt="">
+        </div>
+    </div>
+    
+<script>
+    var x= document.getElementById('IdBoxAlter');
+    function myFunction() 
+    {
+        x.style.display= 'block';
+        console.log(x);
+    }
+
+</script>
+
+</body>
+</html>
